@@ -6,3 +6,33 @@
 
 <h2>Please give us your information and tell us if you are comming to the party</h2>
 
+<hr />
+
+<form asp-action="Register" method="post">
+    <div class="form-group">
+        <label asp-for="Name" >Name:</label>
+        <input asp-for="Name" class="form-control" placeholder="Enter your name" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email">Email:</label>
+        <input asp-for="Email" class="form-control" placeholder="Enter your email" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Phone">Phone</label>
+        <input asp-for="Phone" class="form-control" placeholder="Enter your phone number" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="WillAttend">Will you come to the party?</label>
+        <select asp-for="WillAttend" class="form-control">
+            <option value="">Choose an option</option>
+            <option value="true">Yes, I will attend the party</option>
+            <option value="false">No, I'm unable to attend the party</option>
+        </select>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Register</button>
+</form>
+
