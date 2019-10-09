@@ -49,9 +49,21 @@ namespace PartyInvites.Controllers
         [HttpPost]
         public IActionResult Register(GuestResponse response)
         {
-            //todo: Store the answer
+            Repository.AddResponse(response);
 
-            return View("ThankYou");
+            return View("ThankYou", response);
+        }
+
+        public IActionResult GuestList()
+        {
+            var responses = Repository.GuestResponses().Where(r => r.WillAttend == true);
+
+            //if (responses.Count == 0)
+            //{
+            //    return View("OfferSpecialDrink");
+            //}
+
+            return View(responses);
         }
     }
 }
