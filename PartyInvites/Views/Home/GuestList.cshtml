@@ -11,8 +11,6 @@
 @if (Model.Count() == 0)
 {
     <p>Be the first to register and I will offer you a drink</p>
-    <hr />
-    <a asp-action="Register">Register</a>
 }
 else
 {
@@ -47,3 +45,6 @@ else
         </tbody>
     </table>
 }
+
+<hr />
+<a asp-action="Register" class="btn btn-primary">Register</a>
